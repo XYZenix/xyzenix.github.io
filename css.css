@@ -23,6 +23,7 @@ body {
 }
 .banner {
   box-shadow: 0 1px #444;
+  display: flex;
 }
 a {
   font-size: 0;
