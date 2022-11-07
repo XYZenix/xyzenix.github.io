@@ -76,6 +76,11 @@ a {
   box-shadow: inset 0 0 0 1px #A852FF, inset 0 0 0 2px rgba(0, 0, 0, 0.5), 0 2px #222;
   color: #D1A4FF;
 }
+.nav>a.ms:hover,
+.nav>a.ms:focus {
+  box-shadow: inset 0 0 0 1px #fff200, inset 0 0 0 2px rgba(0, 0, 0, 0.5), 0 2px #222;
+  color: #fff986;
+}
 .nav>a:not([href]) {
   background: linear-gradient(180deg, #1B1B1B 0%, #232323 100%);
   box-shadow: inset 0 -1px #555, inset 0 0 0 1px #3F3F3F, inset 0 0 0 2px rgba(0, 0, 0, 0.5);
