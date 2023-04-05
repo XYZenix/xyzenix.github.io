@@ -2,6 +2,7 @@ html {
   height: 100%;
   --transition: .3s ease-in;
   --transition2: .1s ease-out;
+  --width: 670px;
 }
 body {
   height: 100%;
@@ -11,16 +12,17 @@ body {
 .container {
   justify-content: center;
   display: flex;
-  width: calc(574px + 32px);
+  width: calc(var(--width) + 32px);
   height: 100%;
   margin: 0 auto;
   align-items: center;
 }
 .main {
   display: flex;
-  width: 574px;
+  width: var(--width);
   flex-direction: column;
-  gap: 3px;
+  gap: 2px;
+  align-items: center;
   padding-bottom: 40px;
 }
 .banner {
@@ -81,12 +83,17 @@ a {
   box-shadow: inset 0 0 0 1px #fff200, inset 0 0 0 2px rgba(0, 0, 0, 0.5), 0 2px #222;
   color: #fff986;
 }
+.nav>a.tb:hover,
+.nav>a.tb:focus {
+  box-shadow: inset 0 0 0 1px #FF6B00, inset 0 0 0 2px rgba(0, 0, 0, 0.5), 0 2px #222;
+  color: #FFAE74;
+}
 .nav>a:not([href]) {
   background: linear-gradient(180deg, #1B1B1B 0%, #232323 100%);
   box-shadow: inset 0 -1px #555, inset 0 0 0 1px #3F3F3F, inset 0 0 0 2px rgba(0, 0, 0, 0.5);
 }
 .nav.themes>a {
-  width: 191px;
+  width: 190px;
   height: 35px;
 }
 /* fix */
@@ -150,12 +157,19 @@ a {
 .dtm16-subtitle {
   left: 192px;
 }
-.dtm08-subtitle.broken {
+.dtm08-subtitle.rewrite {
   left: 0;
   top: 48px;
 }
-.nav.themes>a.dtm08:hover~.dtm08-subtitle.broken,
-.nav.themes>a.dtm08:focus~.dtm08-subtitle.broken {
-  color: #f88;
+.nav.themes>a.dtm08:hover~.dtm08-subtitle.rewrite,
+.nav.themes>a.dtm08:focus~.dtm08-subtitle.rewrite {
+  color: #ff8;
   transition: var(--transition2);
+}
+.hl2reference:active {
+  opacity: 0;
+}
+/* just in case */
+[fill="#0000"] {
+  opacity: 0;
 }
