@@ -5,6 +5,7 @@ body {
   background-attachment: fixed;
   margin: 16px 0 0;
   font-family: system-ui, sans-serif;
+  min-width: 800px;
 }
 header {
   width: 590px;
@@ -127,6 +128,7 @@ content {
   width: 800px;
   margin: 0 auto;
   z-index: 20;
+  box-sizing: border-box;
 }
 h1, p {
   margin: 0;
