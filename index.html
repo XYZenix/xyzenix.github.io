@@ -6,9 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="11pixels's website">
     <!-- this sentence is false! -->
+    <script>
+      let scale = 1;
+      let shakeCSS = document.createElement("style");
+      document.head.appendChild(shakeCSS);
+      let busy = false;
+      function gen() {
+        return Math.round(Math.random()*16)-8;
+      }
+      function bleh() {
+        busy = true;
+        let elements = {
+          header: document.querySelector("header")
+        }
+        shakeCSS.innerHTML = `.hit{animation:.1s hit step-start}@keyframes hit{0%{transform:translate(${gen()}px,${gen()}px)}25%{transform:translate(${gen()}px,${gen()}px)}50%{transform:translate(${gen()}px,${gen()}px)}75%{transform:translate(${gen()}px,${gen()}px)}100%{transform:translate(${gen()}px,${gen()}px)}}`;
+        elements.header.classList.add("hit");
+        setTimeout(()=>{
+          elements.header.classList.remove("hit");
+          busy = false;
+        },100);
+      }
+    </script>
   </head>
   <body>
-    <header>
+    <header onclick="bleh()">
       <div class="gloss"></div>
       <div class="text"></div>
       <div class="gradient"></div>
