@@ -270,3 +270,12 @@ h1 {
     100% {transform: translateX(-20px)}
   }
 }
+/* berry :) */
+.webring-container .webring .buttons-top:before {
+  content: url("data:image/gif;base64,R0lGODlhGAAYAHAAACH5BAEAAAsALAAAAAAYABgAgzAwMECYQFjQUDBwQPiQMPjYMOjgYOBwMMhIMLCgYJhQOAAAAAAAAAAAAAAAAAAAAAR/cMlJq704670A4JUnBh/YAUIarCUHBCrbusKazjRc467umZQXSSLiYV4fT+qWEXUGnpWNGQIQroABdLrcBQmFAgE1kE2jLStYLPyd3DP1FevcAAzz6wHBN4YMB3N7fAd+QYB8iYmGEwAJBomQfSZ3BpaSCowhj5YJbkBFmkAgEQA7");
+  position: absolute;
+  z-index: 1;
+  top: 22px;
+  left: 24px;
+  pointer-events: none;
+}
