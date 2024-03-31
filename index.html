@@ -26,6 +26,10 @@
           busy = false;
         },100);
       }
+      let afdCheck = new Date();
+      if (afdCheck.getMonth() == 3 && afdCheck.getDate() == 1) {
+          document.documentElement.style.filter = "invert(1) hue-rotate(180deg)";
+      }
     </script>
   </head>
   <body>
