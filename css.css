@@ -84,11 +84,11 @@ nav {
 .nav.b:after {background-image: url(./asset/l/b.svg)}
 .nav.d:after {background-image: url(./asset/l/d.svg)}
 .nav.g:after {background-image: url(./asset/l/g.svg)}
-.nav:hover, .nav:focus {
+.nav:is(:hover, :focus):not(.leaving) {
   transition: .07s;
   outline: none;
 }
-.nav:hover:after, .nav:focus:after {
+.nav:is(:hover, :focus):not(.leaving):after {
   filter: none;
   transform: translateY(-8px);
 }
@@ -108,9 +108,15 @@ nav {
   text-shadow: 0 1px #000, 0 1px 3px #000;
   pointer-events: none;
 }
-.nav:hover p, .nav:focus p {
+.nav:is(:hover, :focus):not(.leaving) p {
   transition: .07s;
   transform: translateY(-28px);
+}
+.nav.leaving {
+  pointer-events: none;
+}
+.nav.leaving:after {
+  filter: none;
 }
 .nav.y p {color:#f88}
 .nav.t p {color:#fa4}
@@ -118,6 +124,20 @@ nav {
 .nav.b p {color:#8f8}
 .nav.d p {color:#8af}
 .nav.g p {color:#f8f}
+.nav[disabled] {
+  pointer-events: none;
+  opacity: .5;
+  filter: grayscale(1);
+}
+@keyframes leave {
+  0% {translate:0;animation-timing-function: cubic-bezier(0, 0, .5, 1)}
+  50% {translate:0 -15px;animation-timing-function: cubic-bezier(.5, 0, 1, 1)}
+  100% {translate:0;animation-timing-function: cubic-bezier(0, 0, .5, 1)}
+}
+.nav.leaving:after {
+  transition: .07s;
+  animation: 1s leave infinite;
+}
 content {
   display: block;
   position: relative;

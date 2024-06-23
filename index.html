@@ -30,6 +30,17 @@
       if (afdCheck.getMonth() == 3 && afdCheck.getDate() == 1) {
           document.documentElement.style.filter = "invert(1) hue-rotate(180deg)";
       }
+      // bounce
+      let _nav = document.querySelectorAll("nav>.nav");
+      for (i of _nav) {
+        i.addEventListener("pointerup", ()=>{
+          if (i.classList.contains("leaving")) return;
+          i.classList.add("leaving");
+          setTimeout(()=>{
+            i.classList.remove("leaving")
+          },5000);
+        })
+      }
     </script>
   </head>
   <body>
@@ -45,7 +56,7 @@
       <a class="nav t" href="https://11pixels.tumblr.com/"><p>tumblr</p></a>
       <a class="nav m" href="https://mstdn.social/@11pixels"><p>mastodon</p></a>
       <a class="nav b" href="https://gist.github.com/XYZenix/126ed94e4a71ca0512d35a0c74249da9/"><p>backlog</p></a>
-      <a class="nav d" href="https://discord.gg/vUN9sNW"><p>discord</p></a>
+      <a class="nav d" disabled tabindex="-1" href="#"><p>discord</p></a>
       <a class="nav g" href="https://github.com/XYZenix"><p>github</p></a>
     </nav>
     <content class="main">
