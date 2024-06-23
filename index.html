@@ -73,7 +73,7 @@
     <script>
       // bounce
       let _nav = document.querySelectorAll("nav>.nav");
-      for (i of _nav) {
+      _nav.forEach((i)=>{
         i.addEventListener("pointerup", ()=>{
           if (i.classList.contains("leaving")) return;
           i.classList.add("leaving");
@@ -81,7 +81,7 @@
             i.classList.remove("leaving")
           },5000);
         })
-      }
+      })
     </script>
   </body>
 </html>
