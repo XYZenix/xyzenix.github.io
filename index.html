@@ -30,17 +30,6 @@
       if (afdCheck.getMonth() == 3 && afdCheck.getDate() == 1) {
           document.documentElement.style.filter = "invert(1) hue-rotate(180deg)";
       }
-      // bounce
-      let _nav = document.querySelectorAll("nav>.nav");
-      for (i of _nav) {
-        i.addEventListener("pointerup", ()=>{
-          if (i.classList.contains("leaving")) return;
-          i.classList.add("leaving");
-          setTimeout(()=>{
-            i.classList.remove("leaving")
-          },5000);
-        })
-      }
     </script>
   </head>
   <body>
@@ -81,5 +70,18 @@
         </div>
       </content>
     </div>
+    <script>
+      // bounce
+      let _nav = document.querySelectorAll("nav>.nav");
+      for (i of _nav) {
+        i.addEventListener("pointerup", ()=>{
+          if (i.classList.contains("leaving")) return;
+          i.classList.add("leaving");
+          setTimeout(()=>{
+            i.classList.remove("leaving")
+          },5000);
+        })
+      }
+    </script>
   </body>
 </html>
