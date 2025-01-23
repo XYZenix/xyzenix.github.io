@@ -78,12 +78,10 @@ nav {
   filter: grayscale(.5);
   transition: inherit;
 }
-.nav.y:after {background-image: url(./asset/l/y.svg)}
-.nav.t:after {background-image: url(./asset/l/t.svg)}
-.nav.m:after {background-image: url(./asset/l/m.svg)}
 .nav.b:after {background-image: url(./asset/l/b.svg)}
 .nav.d:after {background-image: url(./asset/l/d.svg)}
 .nav.g:after {background-image: url(./asset/l/g.svg)}
+.nav.bs:after {background-image: url(./asset/l/bs.svg)}
 .nav:is(:hover, :focus):not(.leaving) {
   transition: .07s;
   outline: none;
@@ -118,12 +116,10 @@ nav {
 .nav.leaving:after {
   filter: none;
 }
-.nav.y p {color:#f88}
-.nav.t p {color:#fa4}
-.nav.m p {color:#ff8}
 .nav.b p {color:#8f8}
 .nav.d p {color:#8af}
 .nav.g p {color:#f8f}
+.nav.bs p {color:#8ff}
 .nav[disabled] {
   pointer-events: none;
   opacity: .5;
@@ -183,6 +179,14 @@ h1 {
   font-weight: 700;
   position: relative;
   outline: none !important;
+}
+.btn small {
+  color: #666;
+  font-size: 10px;
+}
+.btn.off {
+  background: none;
+  box-shadow: inset 0 1px 2px #0003, inset 0 0 6px #0004, 0 1px #fff;
 }
 @keyframes r1 {
   0% {transform:translate(0, 0)}
@@ -261,7 +265,7 @@ h1 {
     overflow: hidden;
     padding-top: 16px;
     padding-bottom: 16px;
-    transform: translateX(-19px);
+    transform: translateX(1px);
     animation: 1.5s bc ease-in;
     z-index: 100;
   }
@@ -270,7 +274,7 @@ h1 {
     margin: 0;
     animation: 1.5s b ease-in;
   }
-  content.main, header, nav {
+  .webring-anim-container {
     animation: 1.5s bm ease-in;
     transform: translateX(-20px);
   }
@@ -281,8 +285,8 @@ h1 {
   }
   @keyframes bc {
     0% {transform: translateX(0)}
-    60% {transform: translateX(0px);animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1)}
-    100% {transform: translateX(-19px)}
+    60% {transform: translateX(1px);animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1)}
+    100% {transform: translateX(1px)}
   }
   @keyframes bm {
     0% {transform: translateX(0)}
@@ -298,4 +302,34 @@ h1 {
   top: 22px;
   left: 24px;
   pointer-events: none;
+}
+/* contrast */
+@media (forced-colors: active) {
+  content.main, .webring, .btn {
+    outline: solid 1px !important;
+  }
+  .btn, .nav p {
+    color: ButtonText !important;
+  }
+  .btn small, .btn p {
+    color: inherit;
+  }
+  .btn:not(.off):is(:hover,:focus) {
+    outline-width: 2px !important;
+    outline-offset: -1px !important;
+  }
+  .btn:not(.off):active {
+    outline-width: 4px !important;
+    outline-offset: -3px !important;
+  }
+  .btn.off {
+    outline-style: dashed !important;
+    color: GrayText;
+  }
+  .btn :is(r1,r2,r3,r4) {
+    display: none !important;
+  }
+  header .gradient {
+    background: ButtonText !important;
+  }
 }
